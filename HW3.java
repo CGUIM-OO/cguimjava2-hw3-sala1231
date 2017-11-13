@@ -3,8 +3,16 @@ import java.util.HashMap;
 //import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
- * Try to write some comments for your codes (methods, 10 points)
+ * @author TODO: B0344250	歐宜宣
+ * 在class Card中，將Suit以列舉結合switch的方式使他輸出花色
+ * 
+ * getOneCard:取出第一張牌(發出的牌)，將此牌放進usedCard(Array1 list)
+ * 然後將此牌從原先的Cards中刪掉(發出去了)，nUsed(使用過的牌數)要+1
+ * 然後去判定如果手上的牌都發完了，就必須洗牌
+ * 
+ * shuffle:先判定有無發牌(有發牌才需要洗牌)
+ * 將usedCard中的牌收回才洗牌
+ * 洗牌(將位置b的牌卡放在暫存的位置(c)，將a位置的牌卡放入位置b再將暫存區的牌卡放回a)
  */
 public class HW3 {
 	public static void main(String[] args) {
@@ -82,7 +90,7 @@ public class HW3 {
 			}
 
 		}
-		if(checkHash.keySet().size()==52){
+		if(checkHash.keySet().size()==52||checkHash.keySet().size()==50){
 			for(int value:checkHash.values()){
 				if(value!=nDeck){
 					isCorrect=false;
